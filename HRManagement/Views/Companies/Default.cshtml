@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Company>
+
+<div class="card-deck">
+    @foreach (var company in Model)
+    {
+        <div class="card m-3" style="min-width:18rem; max-width:30.5%">
+            <div class="card-header">
+                <h3>@company.Name</h3>
+            </div>
+
+            <div class="card card-text">
+                <a asp-controller="companies" asp-action="Details" asp-route-id="@company.Id"
+                   class="btn btn-primary w-auto">View</a>
+                <a href="#" class="btn btn-primary w-auto">Edit</a>
+                <a href="#" class="btn btn-danger w-auto">Delete</a>
+            </div>
+        </div>
+    }
+</div>

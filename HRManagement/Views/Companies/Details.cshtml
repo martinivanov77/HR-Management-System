@@ -1,0 +1,38 @@
+﻿@model CompanyDetailsViewModel  
+
+@{
+    ViewBag.Title = "Company Details";
+}
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.Company.Name</h1>
+            </div>
+            <div class="card-body text-center">
+
+                <h4>Company Name : @Model.Company.Name </h4>
+                <h4>Creation Date : @Model.Company.CreationDate</h4>
+               
+                @foreach (var office in Model.Company.Offices)
+                {
+                    <h4>
+                        Office Locations: @office.City @office.Country
+                    </h4>
+                }
+
+
+            </div>
+            <div class="card-footer text-center">
+                <a asp-controller="companies" asp-action="default" class="btn btn-primary">Back</a>
+                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/CustomScript.js"></script>
+}
