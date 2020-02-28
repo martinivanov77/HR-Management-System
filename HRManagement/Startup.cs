@@ -21,7 +21,7 @@ namespace HRManagement
 
             //Add Dependency Injection
             services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>(); 
-            services.AddTransient<ICompanyRepository, MockCompanyRepository>();
+            services.AddSingleton<ICompanyRepository, MockCompanyRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

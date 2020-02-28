@@ -19,10 +19,11 @@
                 <h4>Salary : @Model.Employee.Salary</h4>
                 <h4>Vacation Days : @Model.Employee.VacationDays</h4>
                 <h4>Experience Level: @Model.Employee.ExperienceLevel</h4>
+
                 @foreach (var office in Model.Employee.Offices)
                 {
                     <h4>
-                        Offices: @office.City @office.Country
+                        Offices: @office.City , @office.Country
                     </h4>
                 }
 

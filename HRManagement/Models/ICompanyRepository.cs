@@ -9,6 +9,7 @@ namespace HRManagement.Models
     {
         IEnumerable<Company> GetAllCompanies();
         Company GetCompany(int id);
-        
+        public Company Add(Company company, Office office);
+
     }
 }

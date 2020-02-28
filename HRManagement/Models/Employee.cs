@@ -25,8 +25,6 @@ namespace HRManagement.Models
 
         [Required(ErrorMessage = "Please enter Vaction Days!")]
         public int VacationDays { get; set; }
-
-        [Required(ErrorMessage = "Please enter Experience Level!")]
         public ExperienceLevel ExperienceLevel { get; set; }
         public List<Office> Offices { get; set; }
     }

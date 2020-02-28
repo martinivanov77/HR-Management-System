@@ -51,10 +51,13 @@ namespace HRManagement.Models
 
         }
 
-        public Employee Add(Employee employee)
+        public Employee Add(Employee employee, Office office)
         {
             employee.Id = this.employeeList.Max(e => e.Id) + 1;
             this.employeeList.Add(employee);
+            employee.Offices = new List<Office>();
+            employee.Offices.Add(office);
+
             return employee;
         }
 

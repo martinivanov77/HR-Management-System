@@ -30,7 +30,7 @@ namespace HRManagement.Controllers
             EmployeeDetailsViewModel employeeDetailsViewModel = new EmployeeDetailsViewModel()
             {
                 Employee = this.employeeRepository.GetEmployee(id ?? 1),
-                PageTitle = "Employee Details"
+                
             };
 
             return View(employeeDetailsViewModel);
@@ -44,12 +44,12 @@ namespace HRManagement.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Employee employee)
+        public IActionResult Create(Employee employee, Office office)
         {
             if (ModelState.IsValid)
             {
-                var addedEmployee = this.employeeRepository.Add(employee);
-                addedEmployee.Offices = new List<Office>();
+                var addedEmployee = this.employeeRepository.Add(employee, office);
+                
                 return RedirectToAction("details", new { id = addedEmployee.Id });
             }
 

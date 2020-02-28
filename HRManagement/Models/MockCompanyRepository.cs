@@ -7,10 +7,10 @@ namespace HRManagement.Models
 {
     public class MockCompanyRepository : ICompanyRepository
     {
-        private List<Company> companies;
+        private List<Company> companiesList;
         public MockCompanyRepository()
         {
-            this.companies = new List<Company>()
+            this.companiesList = new List<Company>()
             {
                 new Company
                 { 
@@ -28,14 +28,24 @@ namespace HRManagement.Models
                 }
             };
         }
- 
+
+        public Company Add(Company company, Office office)
+        {
+            company.Id = this.companiesList.Max(c => c.Id) + 1;
+            this.companiesList.Add(company);
+            company.Offices = new List<Office>();
+            company.Offices.Add(office);
+
+            return company;
+        }
         public IEnumerable<Company> GetAllCompanies()
         {
-            return this.companies;
+            return this.companiesList;
         }
         public Company GetCompany(int id)
         {
-            return this.companies.FirstOrDefault(company => company.Id == id);
+            return this.companiesList.FirstOrDefault(c => c.Id == id);
         }
+        
     }
 }
