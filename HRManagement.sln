@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRManagement", "HRManagement\HRManagement.csproj", "{5189D222-04D0-4C18-A0C4-D00DE401F732}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRManagement", "HRManagement\HRManagement.csproj", "{5189D222-04D0-4C18-A0C4-D00DE401F732}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

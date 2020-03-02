@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HRManagement.Models
 {
     public class Employee
     {
-        [Required]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Please enter First Name!")]
@@ -26,6 +24,6 @@ namespace HRManagement.Models
         [Required(ErrorMessage = "Please enter Vaction Days!")]
         public int VacationDays { get; set; }
         public ExperienceLevel ExperienceLevel { get; set; }
-        public List<Office> Offices { get; set; }
+        public  ICollection<Office> Offices { get; set; }
     }
 }

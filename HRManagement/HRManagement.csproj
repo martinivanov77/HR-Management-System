@@ -5,7 +5,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200301112437_UpdatedEmployeesAndOffices.cs" />
+    <Compile Remove="Migrations\20200301112437_UpdatedEmployeesAndOffices.Designer.cs" />
+    <Compile Remove="Migrations\20200302103140_SeedDBEmployees.cs" />
+    <Compile Remove="Migrations\20200302103140_SeedDBEmployees.Designer.cs" />
+    <Compile Remove="Migrations\20200302104013_TestSeedData.cs" />
+    <Compile Remove="Migrations\20200302104013_TestSeedData.Designer.cs" />
+    <Compile Remove="Migrations\20200302111007_ThirdMigration.cs" />
+    <Compile Remove="Migrations\20200302111007_ThirdMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200302120822_FourthMigration.cs" />
+    <Compile Remove="Migrations\20200302120822_FourthMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200302132104_ChangedToEntityModels.cs" />
+    <Compile Remove="Migrations\20200302132104_ChangedToEntityModels.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

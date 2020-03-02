@@ -26,7 +26,7 @@ namespace HRManagement.Controllers
 
         [HttpGet]
         public ViewResult Details(int? id)
-        {
+         {
             EmployeeDetailsViewModel employeeDetailsViewModel = new EmployeeDetailsViewModel()
             {
                 Employee = this.employeeRepository.GetEmployee(id ?? 1),

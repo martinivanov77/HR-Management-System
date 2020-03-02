@@ -50,7 +50,14 @@ namespace HRManagement.Models
             };
 
         }
-
+        public Employee GetEmployee(int id)
+        {
+            return this.employeeList.FirstOrDefault(e => e.Id == id);
+        }
+        public IEnumerable<Employee> GetAllEmployees()
+        {
+            return this.employeeList;
+        }
         public Employee Add(Employee employee, Office office)
         {
             employee.Id = this.employeeList.Max(e => e.Id) + 1;
@@ -60,15 +67,31 @@ namespace HRManagement.Models
 
             return employee;
         }
-
-        public IEnumerable<Employee> GetAllEmployees()
+        public Employee Update(Employee employeeChanges)
         {
-            return this.employeeList;
-        }
+            Employee employee = this.employeeList.FirstOrDefault(e => e.Id == employeeChanges.Id);
+            if (employee != null)
+            {
+                employee.FirstName = employeeChanges.FirstName;
+                employee.LastName = employeeChanges.LastName;
+                employee.StartingDate = employeeChanges.StartingDate;
+                employee.Salary = employeeChanges.Salary;
+                employee.VacationDays = employeeChanges.VacationDays;
+                employee.Offices = employeeChanges.Offices;
+            }
 
-        public Employee GetEmployee(int id)
-        {
-            return this.employeeList.FirstOrDefault(e => e.Id == id);
+            return employee;
         }
+        public Employee Delete(int id)
+        {
+            Employee employee = this.employeeList.FirstOrDefault(e => e.Id == id); 
+            if(employee != null)
+            {
+                this.employeeList.Remove(employee);
+            }
+
+            return employee;
+        }
+       
     }
 }

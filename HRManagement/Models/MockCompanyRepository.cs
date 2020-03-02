@@ -13,7 +13,7 @@ namespace HRManagement.Models
             this.companiesList = new List<Company>()
             {
                 new Company
-                { 
+                {
                     Id = 1,
                     Name = "Wall Street Code",
                     CreationDate = new DateTime(2000, 10, 10),
@@ -46,6 +46,6 @@ namespace HRManagement.Models
         {
             return this.companiesList.FirstOrDefault(c => c.Id == id);
         }
-        
+
     }
 }
